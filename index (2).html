@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Page</title>
+
+    <script>
+        // Disable right-click
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+        });
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "F12" || 
+                (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
+                (event.ctrlKey && event.key === "U")) {
+                event.preventDefault();
+            }
+        });
+
+        // Detect Developer Tools
+        setInterval(function() {
+            if (window.outerWidth - window.innerWidth > 100 || 
+                window.outerHeight - window.innerHeight > 100) {
+                document.body.innerHTML = "<h1>DevTools Detected! Access Blocked</h1>";
+            }
+        }, 500);
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home"><b>Home</b></a></li>
+            <li><a href="#about"><b>About</b></a></li>
+            <li><a href="#contact"><b>Contact</b></a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Secure Web Page</h1>
+        <p><b>This page is protected from inspection using JavaScript techniques.</b></p>
+        <p>Here, you will find different sections containing text, tables, forms, and lists.</p>
+        <br>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about">
+            <h1>About This Page</h1>
+            <p>This page is designed to demonstrate how we can block users from inspecting the page source.</p>
+            <p>Although JavaScript-based protections exist, an advanced user can still bypass them.</p>
+            <p>We have added multiple sections, elements, and text to make the page more detailed.</p>
+            <br>
+        </section>
+
+        <!-- Information Section -->
+        <section>
+            <h1>Why is Source Code Protection Important?</h1>
+            <p><b>1. Preventing unauthorized copying:</b> Some developers prefer to keep their code hidden to avoid theft.</p>
+            <p><b>2. Enhancing security:</b> Hiding certain scripts may prevent malicious users from finding vulnerabilities.</p>
+            <p><b>3. Maintaining originality:</b> Many websites do not want their structure copied without permission.</p>
+            <br>
+        </section>
+
+        <!-- Features List -->
+        <section>
+            <h1>Website Features</h1>
+            <ul>
+                <li><b>Right-click disabled</b></li>
+                <li><b>Developer tools detection</b></li>
+                <li><b>Shortcut keys blocked</b></li>
+                <li><b>Interactive form</b></li>
+                <li><b>Informative sections</b></li>
+                <li><b>Team member table</b></li>
+            </ul>
+            <br>
+        </section>
+
+        <!-- Form Section -->
+        <section id="<contact></contact>">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, feel free to reach out through the form below.</p>
+            <form action="#" method="POST">
+                <label for="name"><b>Name:</b></label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email"><b>Email:</b></label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone"><b>Phone:</b></label>
+                <input type="tel" id="phone" name="phone"><br><br>
+
+                <label for="message"><b>Message:</b></label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit"><b>Submit</b></button>
+            </form>
+            <br>
+        </section>
+
+        <!-- Team Members Table -->
+        <section>
+            <h1>Our Team</h1>
+            <table border="1">
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Role</b></th>
+                    <th><b>Email</b></th>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>CEO</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>CTO</td>
+                    <td>jane@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mike Johnson</td>
+                    <td>Lead Developer</td>
+                    <td>mike@example.com</td>
+                </tr>
+            </table>
+            <br>
+        </section>
+
+        <!-- Random Facts Section -->
+        <section>
+            <h1>Did You Know?</h1>
+            <p>Web browsers allow users to inspect code using built-in developer tools.</p>
+            <p>JavaScript can prevent some basic attempts to view the source code, but it is not foolproof.</p>
+            <p>Even if you disable right-click and shortcut keys, determined users can still access the code.</p>
+            <br>
+        </section>
+
+        <!-- Important Notes -->
+        <section>
+            <h1>Final Thoughts</h1>
+            <p><b>Blocking inspection is not a full-proof security measure.</b></p>
+            <p>However, it can serve as a deterrent to casual users attempting to view the source code.</p>
+            <p>If you need advanced security, consider obfuscating your JavaScript or using server-side protections.</p>
+            <br>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Secure Web. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
